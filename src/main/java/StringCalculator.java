@@ -18,7 +18,7 @@ for(String v : sNumbers)
 {
 count += Integer.parseInt(v.trim());
 int number = Integer.parseInt(v.trim());
-if (number < 0) throw new IllegalArgumentException("Negatives not allowed");
+if (number < 0) negativeNumbers.add(v.trim());
 count += number;
 }
 return count;
