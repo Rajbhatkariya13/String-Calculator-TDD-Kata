@@ -1,29 +1,17 @@
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+public class StringCalculator 
+{
+  public int add(String numbers)
+{
+if (numbers.equals(""))
+            return 0;
 
-public class StringCalculatorTest {
-    StringCalculator stringCalculator;
-    @Before
-    public void init(){
-        stringCalculator = new StringCalculator();
+        String[] sNumbers = numbers.split(",");
+        int count = 0;
+        for(String v : sNumbers)
+       {
+            count += Integer.parseInt(v.trim());
+        }
+        return count;
+
     }
-
- @Test
-    public void getZeroForEmptyString(){
-        Assert.assertEquals(0, stringCalculator.add(""));
-    }
-
-    @Test
-    public void sumOfOneInteger(){
-        Assert.assertEquals(1, stringCalculator.add("1"));
-    }
-
-    @Test
-    public void sumOfTwoInteger(){
-        Assert.assertEquals(3, stringCalculator.add("1,2"));
-    }
-
 }
-}
-} 
